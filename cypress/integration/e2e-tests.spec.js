@@ -75,11 +75,9 @@ describe('E2E tests', () => {
     })
 
     it('Delete Customer', () => {
-        cy.get(':nth-child(1) > :nth-child(5) > button').click()
-        cy.get(':nth-child(1) > :nth-child(5) > button').click()
-        cy.get(':nth-child(1) > :nth-child(5) > button').click()
-        cy.get(':nth-child(1) > :nth-child(5) > button').click()
-        cy.get(':nth-child(1) > :nth-child(5) > button').click() //a little dumb, but it works ^^ 
+        for (let i = 0; i < 5; i++) {
+            cy.get(':nth-child(1) > :nth-child(5) > button').click()
+        }
         cy.get("tbody > .ng-scope > :nth-child(1)").then(($el) => {
             const text = $el.text(); 
 
